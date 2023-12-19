@@ -15,8 +15,6 @@ categories_data = [
         'name': 'JavaScript',
         'slug': 'javascript',
     },
-    # Добавьте другие категории по аналогии
-    # ...
 ]
 
 # Список книг
