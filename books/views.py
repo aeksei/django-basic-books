@@ -2,13 +2,9 @@ from datetime import datetime
 from random import choice, randint
 
 from django.http import HttpResponse, HttpRequest, JsonResponse, Http404
+from django.shortcuts import render
 
-
-books = [
-    {"id": 1, "title": "Книга 1", "author": "Автор 1"},
-    {"id": 2, "title": "Книга 2", "author": "Автор 2"},
-    # ... другие книги
-]
+from .models import books
 
 
 def get_object_or_404(all_books: list, id_: int) -> dict:
@@ -57,3 +53,14 @@ def get_book_detail(request, book_id: int):
         get_object_or_404(books, book_id),
         json_dumps_params={"ensure_ascii": False, "indent": 4}
     )
+
+
+def home(request):
+    context = {
+        "books_list": books
+    }
+    return render(request, "books/home.html", context=context)
+
+
+def about(request):
+    return render(request, "books/about.html")
