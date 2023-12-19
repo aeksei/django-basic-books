@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <h1>{{ category_name }}</h1>
+    <div class="row">
+        <!-- Карточка 1 -->
+        {% for book_dict in books_list %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ book_dict.title }}</h5>
+                        <p class="card-text">{{ book_dict.author }}</p>
+                        <p class="card-text">{{ book_dict.published_year }}</p>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p>Книг нет</p>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -4,7 +4,7 @@ from random import choice, randint
 from django.http import HttpResponse, HttpRequest, JsonResponse, Http404
 from django.shortcuts import render
 
-from .models import books
+from .models import books, categories_data
 
 
 def get_object_or_404(all_books: list, id_: int) -> dict:
@@ -57,10 +57,30 @@ def get_book_detail(request, book_id: int):
 
 def home(request):
     context = {
-        "books_list": books
+        "books_list": books,
+        "categories": categories_data,
     }
     return render(request, "books/home.html", context=context)
 
 
 def about(request):
-    return render(request, "books/about.html")
+    context = {
+        "categories": categories_data,
+    }
+    return render(request, "books/about.html", context=context)
+
+
+def category_books(request, category_slug: str):
+    category_name = None
+    for category in categories_data:
+        if category["slug"] == category_slug:
+            category_name = category["name"]
+
+    books_list = [book for book in books if book['category'] == category_slug]
+
+    context = {
+        "books_list": books_list,
+        "categories": categories_data,
+        "category_name": category_name,
+    }
+    return render(request, "books/category_books.html", context=context)
