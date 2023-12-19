@@ -49,10 +49,12 @@ def get_path(request, sub_path_1):
 
 
 def get_book_detail(request, book_id: int):
-    return JsonResponse(
-        get_object_or_404(books, book_id),
-        json_dumps_params={"ensure_ascii": False, "indent": 4}
-    )
+    context = {
+        "categories": categories_data,
+        "book": get_object_or_404(books, book_id),
+    }
+
+    return render(request, "books/book_detail.html", context=context)
 
 
 def home(request):

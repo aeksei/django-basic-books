@@ -22,6 +22,7 @@ categories_data = [
 # Список книг
 books = [
     {
+        'id': 1,
         'title': 'Flask в действии',
         'description': 'Погружение в веб-разработку с использованием Flask.',
         'author': 'Мигель Гринберг',
@@ -29,6 +30,7 @@ books = [
         'category': 'web-development',
     },
     {
+        'id': 2,
         'title': 'Django для начинающих',
         'description': 'Изучение веб-разработки с использованием Django.',
         'author': 'Уильям С. Винсент',
@@ -36,6 +38,7 @@ books = [
         'category': 'web-development',
     },
     {
+        'id': 3,
         'title': 'Python. Эффективное программирование',
         'description': 'Освоение эффективных практик программирования на Python.',
         'author': 'Бретт Слэткин',
@@ -43,6 +46,7 @@ books = [
         'category': 'python',
     },
     {
+        'id': 4,
         'title': 'Fluent Python',
         'description': 'Продвинутое программирование на Python.',
         'author': 'Люсиано Рамалью',
@@ -50,6 +54,7 @@ books = [
         'category': 'python',
     },
     {
+        'id': 5,
         'title': 'JavaScript и jQuery: Новые возможности',
         'description': 'Изучение веб-разработки с использованием JavaScript и jQuery.',
         'author': 'Дэвид Сойер Макфарланд',
@@ -57,6 +62,7 @@ books = [
         'category': 'javascript',
     },
     {
+        'id': 6,
         'title': 'Python. Тестирование программ',
         'description': 'Практическое руководство по тестированию программ на Python.',
         'author': 'Брайан Окенхейм',
@@ -64,6 +70,7 @@ books = [
         'category': 'python',
     },
     {
+        'id': 7,
         'title': 'Flask Web Development',
         'description': 'Developing Web Applications with Python and Flask.',
         'author': 'Miguel Grinberg',
@@ -71,6 +78,7 @@ books = [
         'category': 'web-development',
     },
     {
+        'id': 8,
         'title': 'Python Crash Course',
         'description': 'A Hands-On, Project-Based Introduction to Programming.',
         'author': 'Eric Matthes',
@@ -78,6 +86,7 @@ books = [
         'category': 'python',
     },
     {
+        'id': 9,
         'title': 'Vue.js в действии',
         'description': 'Разработка современных веб-приложений с использованием Vue.js.',
         'author': 'Эрик Рэндольф',
@@ -85,6 +94,7 @@ books = [
         'category': 'web-development',
     },
     {
+        'id': 10,
         'title': 'Effective Python: 90 способов улучшить свой Python код',
         'description': 'Рекомендации по улучшению стиля и эффективности написания Python кода.',
         'author': 'Бретт Слэткин',

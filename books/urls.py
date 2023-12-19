@@ -11,7 +11,7 @@ urlpatterns = [
     path('random_book/', views.random_book),
     path('randon_book_with_missing/', views.randon_book_with_missing),
     path('custom_path/<str:sub_path_1>/', views.get_path),
-    path('books/<int:book_id>/', views.get_book_detail),
+    path('books/<int:book_id>/', views.get_book_detail, name="book-detail"),
     path('categories/<slug:category_slug>/books/',
          views.category_books,
          name="category-books"),
