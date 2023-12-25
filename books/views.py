@@ -3,6 +3,7 @@ from random import choice, randint
 
 from django.http import HttpResponse, HttpRequest, JsonResponse, Http404
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 from .models import books, categories_data
 
@@ -65,6 +66,7 @@ def home(request):
     return render(request, "books/home.html", context=context)
 
 
+@login_required
 def about(request):
     context = {
         "categories": categories_data,
